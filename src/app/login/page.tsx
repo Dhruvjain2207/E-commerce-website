@@ -102,6 +102,7 @@ function page() {
             </div>
 
             <motion.button 
+            onClick={()=>signIn("google",{callbackUrl:"/"})}
          
          whileHover={{scale:1.03}}
          whileTap={{scale:0.95}}

@@ -11,6 +11,7 @@ import { ClipLoader } from "react-spinners";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { signIn } from 'next-auth/react';
 
 function Register() {
   const router=useRouter()
@@ -148,7 +149,8 @@ function Register() {
               <div className='flex-1 h-px bg-gray-600'></div>
             </div>
 
-            <motion.button 
+            <motion.button
+            onClick={()=>signIn("google",{callbackUrl:"/"})} 
          
          whileHover={{scale:1.03}}
          whileTap={{scale:0.95}}

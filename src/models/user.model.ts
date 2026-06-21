@@ -50,7 +50,7 @@ const userSchema=new mongoose.Schema<Iuser>({
     },
     password:{
         type:String,
-        required:true 
+         
     },
     image:{
         type:String,
