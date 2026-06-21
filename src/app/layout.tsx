@@ -1,6 +1,9 @@
+
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { SessionProvider } from "next-auth/react";
+import Provider from "@/Provider";
 
 
 
@@ -16,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+       <Provider>
+          {children}
+          </Provider></body>
     </html>
   );
 }
