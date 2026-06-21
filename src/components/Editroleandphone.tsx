@@ -57,30 +57,40 @@ function Editroleandphone() {
         className='bg-white/10 border border-white/30 rounded-lg p-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full'
         >
         </input>
-        <div className='grid grid-cols-3 sm:grid-cols-1 gap-8'>
-          {roles.map((rol)=>{
-            const isAdmiBlocked=rol.value=="admin" && adminExist==true
-            return (
-              <motion.div key={rol.value} 
-              onClick={()=>{
-                if(isAdmiBlocked){
-                  alert("admin already exist you cannot select admin role")
-                  return
-                }
-                setRole(rol.value);
-              }}
-              className={`cursor-pointer p-6 m-5 text-center rounded-2xl border transition text-lg font-medium
-                ${role===rol.value? "border-blue-500/40" : "border-white/20 bg-white/10 hover:bg-white/20"}
-                ${isAdmiBlocked && "opacity-40 cursoe-not-allowed"}
-                `}
-              >
-                regeb
-                
+        <div className='grid grid-cols-3 gap-8 mt-8'>
+          {
+            roles.map((rol)=>{
+              const isAdminBlocked=rol.value=="admin" && adminExist==true
+              return (
+                <motion.div key={rol.value}
+               
+                onClick={()=>{
+                  if(isAdminBlocked){
+                    alert("Admin already exists you cannot select admin role")
+                    return;
 
-              </motion.div>
-            )
-          })}
-        </div>
+                  }
+                  setRole(rol.value)
+                }}
+
+                className={`cursor-pointer p-6 text-center rounded-2xl border font-medium text-lg transition 
+                ${
+                  role === rol.value
+                  ? "border-blue-500 bg-blue-500/40" 
+                   : "border-white/20 bg-white/10 hover:bg-white/30"
+                }
+                ${isAdminBlocked && "opacity-40 cursor-not-allowed"}
+                `}>
+                  <div className='flex justify-center mb-3'>{rol.icon}</div>
+                  <p className="">{rol.value}</p>
+
+                  {isAdminBlocked && <p className='text-xs text-red-400 mt-2'>Admin already exist</p>}
+           
+                </motion.div>
+              )
+            })
+          }
+          </div>
       
        </form>
          

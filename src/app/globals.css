@@ -1,2 +1,7 @@
 @import "tailwindcss";
 
+/* Spacing for the three role cards */
+form > .grid.grid-cols-3 {
+  margin-top: 2rem;
+  gap: 2rem;
+}
