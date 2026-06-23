@@ -5,3 +5,11 @@ form > .grid.grid-cols-3 {
   margin-top: 2rem;
   gap: 2rem;
 }
+
+::-webkit-scrollbar{
+  display:none;
+}
+
+*{
+   scrollbar-width: none;
+}
