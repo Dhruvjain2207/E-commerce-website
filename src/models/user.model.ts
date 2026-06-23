@@ -1,7 +1,7 @@
 import { timeStamp } from "console";
 import mongoose from "mongoose";
 
-interface Iuser{
+export interface Iuser{
     id:mongoose.Types.ObjectId,
 
 

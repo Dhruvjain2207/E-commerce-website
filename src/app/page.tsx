@@ -1,9 +1,11 @@
 import { auth } from '@/auth'
 import Editroleandphone from '@/components/Editroleandphone'
+import Navbar from '@/components/Navbar'
 import connectDb from '@/lib/ConnectDb'
 import User from '@/models/user.model'
 import { redirect } from 'next/navigation'
 import React from 'react'
+
 
  export default async function page() {
    await connectDb()
@@ -16,11 +18,13 @@ import React from 'react'
    if(incomplete){
     return <Editroleandphone></Editroleandphone>
    }
+   const plainUser= JSON.parse(JSON.stringify(user))
 
 
   return (
-    <div>
-
+    <div className='flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 font-sans flex-col'>
+      <Navbar user={plainUser}/>
+     
     </div>
   )
 }
