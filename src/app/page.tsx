@@ -1,9 +1,9 @@
 import { auth } from '@/auth'
-import Admindashboard from '@/components/Admin/Admindashboard'
+
 import Editroleandphone from '@/components/Editroleandphone'
 import Navbar from '@/components/Navbar'
 import Userdashboard from '@/components/User/Userdashboard'
-import VendorDashboard from '@/components/Vendor/VendorDashboard'
+
 import connectDb from '@/lib/ConnectDb'
 import User from '@/models/user.model'
 import { redirect } from 'next/navigation'
@@ -28,7 +28,7 @@ import React from 'react'
     <div className='flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 font-sans flex-col'>
       <Navbar user={plainUser}/>
 
-      {user?.role=="user" ? <Userdashboard/>: user?.role=="vendor" ? <VendorDashboard/> : <Admindashboard/>}
+      {user?.role=="user" ? <Userdashboard/>:""} 
      
     </div>
   )
